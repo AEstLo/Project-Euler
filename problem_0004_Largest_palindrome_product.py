@@ -11,7 +11,7 @@ import unittest
 def isPalindrome(num):
     n = num
     rev = 0
-    while (num > 0):
+    while num > 0:
         dig = num % 10
         rev = rev * 10 + dig
         num = num // 10
@@ -27,7 +27,7 @@ def getLargestPalindromeProduct(upper_bound=None):
     for smaller in range(101, 1000):
         for bigger in range(smaller, 1000):
             prod = smaller * bigger
-            if prod > upper_bound:
+            if prod >= upper_bound:
                 break
             if largest_palindrome < prod and isPalindrome(prod):
                 largest_palindrome = prod
